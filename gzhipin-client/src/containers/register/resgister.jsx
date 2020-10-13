@@ -24,6 +24,10 @@ export default class Register extends Component {
         })
     }
 
+    toLogin = () => {
+        this.props.history.replace('/login')
+    }
+
     render() {
         const {userType} = this.state
         return (
@@ -48,7 +52,7 @@ export default class Register extends Component {
                         <WhiteSpace/>
                         <Button type='primary' onClick={this.handleRegister}>注&nbsp;&nbsp;&nbsp;册</Button>
                         <WhiteSpace/>
-                        <Button>已有账户</Button>
+                        <Button onClick={this.toLogin}>已有账户</Button>
                     </List>
                 </WingBlank>
             </div>
