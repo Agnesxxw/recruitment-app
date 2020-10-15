@@ -37,17 +37,17 @@ export default class Register extends Component {
                 <WingBlank>
                     <List>
                         <WhiteSpace/>
-                        <InputItem onChange={val => {this.handleChange('username', val)}}>用户名：</InputItem>
+                        <InputItem placeholder='请输入用户名'  onChange={val => {this.handleChange('username', val)}}>用户名：</InputItem>
                         <WhiteSpace/>
-                        <InputItem type="password" onChange={val => {this.handleChange('password', val)}}>密&nbsp;&nbsp;&nbsp;码：</InputItem>
+                        <InputItem placeholder='请输入密码' type="password" onChange={val => {this.handleChange('password', val)}}>密&nbsp;&nbsp;&nbsp;码：</InputItem>
                         <WhiteSpace/>
-                        <InputItem type="password" onChange={val => {this.handleChange('confPassword', val)}}>确认密码：</InputItem>
+                        <InputItem placeholder='请输入确认密码' type="password" onChange={val => {this.handleChange('confPassword', val)}}>确认密码：</InputItem>
                         <WhiteSpace/>
                         <ListItem>
                             <span>用户类型：</span>
-                            <Radio checked={userType === 'qiuzhi'? true : false } onChange={() => {this.handleChange('userType', 'qiuzhi')}}>&nbsp;&nbsp;求职</Radio>
+                            <Radio checked={userType === 'qiuzhi' } onChange={() => {this.handleChange('userType', 'qiuzhi')}}>&nbsp;&nbsp;求职</Radio>
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <Radio checked={userType === 'laoban'? true : false } onChange={() => {this.handleChange('userType', 'laoban')}}>老板</Radio>
+                            <Radio checked={userType === 'laoban'} onChange={() => {this.handleChange('userType', 'laoban')}}>老板</Radio>
                         </ListItem>
                         <WhiteSpace/>
                         <Button type='primary' onClick={this.handleRegister}>注&nbsp;&nbsp;&nbsp;册</Button>
