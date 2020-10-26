@@ -28,8 +28,6 @@ router.post('/register', function(req, res){
       })
     }
   })
-
-  
 })
 
 // 登陆路由
