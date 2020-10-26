@@ -1,3 +1,7 @@
 /**
- * 包含n哥action type名称常量
+ * 包含n个action type名称常量
  */
+
+ export const SUCCESS_MSG = "AUTH_MSG";
+ export const ERROR_MSG = "ERROR_MSG"
+ 
