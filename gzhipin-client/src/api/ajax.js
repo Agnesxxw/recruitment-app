@@ -11,7 +11,7 @@
             paramStr += key + '='+ data[key] + '&'
         })
         if(paramStr){
-            paramStr.substring(0, paramStr.length - 1)
+            paramStr = paramStr.substring(0, paramStr.length - 1)
         }
         return axios.get(url + '?' + paramStr)
     } else {
