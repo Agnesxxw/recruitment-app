@@ -2,11 +2,14 @@
     register 路由组件
 */
 import React, {Component} from 'react'
+import {connect} from 'react-redux'
+import {register} from '../../redux/actions'
 import { NavBar, WingBlank, List, InputItem, WhiteSpace, Radio, Button} from 'antd-mobile'
 import Logo from '../../components/logo/logo'
+
 const ListItem = List.Item
 
-export default class Register extends Component {
+class Register extends Component {
     state = {
         username: '',
         password: '',
@@ -15,7 +18,7 @@ export default class Register extends Component {
     }
     
     handleRegister = () => {
-        console.log(this.state)
+        this.props.register(thi.state)
     }
 
     handleChange = (stateName, val) => {
@@ -59,3 +62,8 @@ export default class Register extends Component {
         )
     }
 }
+
+export default connect(
+    state => ({}),
+    {register} 
+)(Register)

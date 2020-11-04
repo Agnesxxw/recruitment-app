@@ -18,9 +18,16 @@ const errorMsg = (msg) => ({
 
 // 注册异步action
 export const register = (user) => {
-    // 发送注册请求
+    const { username, password, password2, type } = user
+    // 做表单的前台验证分发一个errorMsg的同步action
+    if(!username){
+        return errorMsg('请输入用户名')
+    }else if(password !== password2){
+        return errorMsg('两次密码输入不一致')
+    }
+    // 表单输入合法，发送异步请求ajax请求，注册请求
     return async dispatch => {
-        const response = await reqRegister(user)
+        const response = await reqRegister(username, password, type)
         const result = response.data
         if(SpeechRecognitionResultList.code === 0){ // 成功
 
@@ -31,6 +38,13 @@ export const register = (user) => {
 
 // 登陆异步action
 export const login = (user) => {
+    const { username, password } = user
+    // 做表单的前台验证分发一个errorMsg的同步action
+    if(!username){
+        return errorMsg('请输入用户名')
+    }else if(!password){
+        return errorMsg('请输入密码')
+    }
     // 发送注册请求
     return async dispatch => {
         const response = await reqLogin(user)
